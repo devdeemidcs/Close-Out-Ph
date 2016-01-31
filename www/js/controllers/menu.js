@@ -6,8 +6,8 @@
 /// <reference path="../../../typings/custom/Interfaces.d.ts" />
 /// <reference path="../../../typings/custom/ionic.d.ts" />
 
-app.controller('MenuCtrl', [$scope, $rootScope, function($scope, $rootScope, $http, $ionicHistory){
+app.controller('MenuCtrl', ['$scope', '$rootScope', function($scope, $rootScope, $http, $ionicHistory){
     
-   
+  
     
 }]);

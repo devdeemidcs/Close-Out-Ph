@@ -1,4 +1,7 @@
-app.config(function($stateProvider, $urlRouterProvider) {
+app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
+
+  $ionicConfigProvider.backButton.previousTitleText(false);
+  $ionicConfigProvider.backButton.text('');
 
   $stateProvider
 
@@ -6,45 +9,60 @@ app.config(function($stateProvider, $urlRouterProvider) {
     url: '/app',
     abstract: true,
     templateUrl: 'templates/menu.html',
-    controller: 'AppCtrl'
+    controller: 'MenuCtrl'
   })
 
-  .state('app.search', {
-    url: '/search',
+  .state('app.about', {
+    url: '/about',
     views: {
       'menuContent': {
-        templateUrl: 'templates/search.html'
+        templateUrl: 'templates/about.html'
       }
     }
   })
 
-  .state('app.browse', {
-      url: '/browse',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/browse.html'
-        }
-      }
-    })
-    .state('app.playlists', {
-      url: '/playlists',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/playlists.html',
-          controller: 'PlaylistsCtrl'
-        }
-      }
-    })
+  //children of about page
 
-  .state('app.single', {
-    url: '/playlists/:playlistId',
+  .state('app.about/others', {
+    url: '/others',
     views: {
       'menuContent': {
-        templateUrl: 'templates/playlist.html',
-        controller: 'PlaylistCtrl'
+        templateUrl: 'templates/about/others.html'
       }
     }
-  });
+  })
+
+  .state('app.about/built', {
+    url: '/built',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/about/built.html'
+      }
+    }
+  })
+
+  .state('app.about/terms', {
+    url: '/terms',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/about/terms.html'
+      }
+    }
+  })
+
+  .state('app.about/closeout', {
+    url: '/closeout',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/about/closeout.html'
+      }
+    }
+  })
+  
+  
+  ;
+
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/playlists');
+  $urlRouterProvider.otherwise('/app/about');
+  
 });
