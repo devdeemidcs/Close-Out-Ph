@@ -4,3 +4,14 @@
 node_modules/
 platforms/
 plugins/
+temp/
+resources/
+www/lib
+www/img
+hooks/
+
+*.DS_Store
+*.log
+*.swp
+*.keystore
+*.sw*
