@@ -146,3 +146,8 @@ ion-slide{
 #nav_list a.list_border{
   border-bottom: 1px solid #f0f0f0;
 }
+
+span.secondary-buttons, span.secondary-buttons a {
+  position: relative;
+  top: 2px;
+}

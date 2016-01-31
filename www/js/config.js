@@ -71,6 +71,28 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
       }
     }
   })
+  
+  //PROFILE
+  .state('app.profile', {
+    url: '/profile',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/profile.html',
+        controller: 'ProfileCtrl'
+      }
+    }
+  })
+  
+  //EDIT PROFILE
+  .state('app.pofile/edit', {
+    url: '/edit',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/edit_profile.html',
+        controller: 'EditProfileCtrl'
+      }
+    }
+  })
 
   ;
 
