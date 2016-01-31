@@ -18,6 +18,7 @@ DIVIDER COLOR:       #B6B6B6
 
 ion-content{
   color: #212121 !important;  
+  background: #fafafa !important;
 }
 
 /* MATERIAL DESIGN CODES */
@@ -126,9 +127,16 @@ ion-slide{
   padding-right: 0px;
 }
 
-#about_list, #about_list a.item-content{
+#about_list, #about_list a.item-content, #specs_list, #specs_list a.item-content{
   background: #fafafa;
 }
 
+#specs_list p, #specs_list h2, #specs_list i, #specs_list a{
+  background: #fafafa;
+}
+
+.justify{
+  text-align: justify !important;
+}
 
 
