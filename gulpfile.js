@@ -6,23 +6,12 @@ var sass = require('gulp-sass');
 var minifyCss = require('gulp-minify-css');
 var rename = require('gulp-rename');
 var sh = require('shelljs');
-var typescript = require('gulp-tsc');
 
 var paths = {
-  sass: ['./scss/**/*.scss'],
-  typescript: ['./www/scripts/**/*.ts'] 
+  sass: ['./scss/**/*.scss']
 };
 
-gulp.task('default', ['sass', 'compile']);
-
-function compileTypeScript(done){
-    gulp.src(paths.typescript)
-        .pipe(typescript({sourcemap: true, out: 'tslib.js', sourceRoot: '../scripts'}))
-        .pipe(gulp.dest('./www/js/'))
-        .on('end', done);
-}
-
-gulp.task('compile', compileTypeScript);
+gulp.task('default', ['sass']);
 
 gulp.task('sass', function(done) {
   gulp.src('./scss/ionic.app.scss')
@@ -56,7 +45,6 @@ gulp.task('git-check', function(done) {
       '\n  Download git here:', gutil.colors.cyan('http://git-scm.com/downloads') + '.',
       '\n  Once git is installed, run \'' + gutil.colors.cyan('gulp install') + '\' again.'
     );
-    process.exit(1);
   }
   done();
 });

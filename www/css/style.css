@@ -1,5 +1,134 @@
 /* Empty. Add your own CSS if you like */
 
-.justify {
-  text-align: justify !important;
+/*
+MY PALETTE
+DARK PRIMARY COLOR:  #00796B
+PRIMARY COLOR:       #009688
+LIGHT PRIMARY COLOR: #B2DFDB
+TEXT/ICONS:          #FFF
+ACCENT COLOR:        #FFC107
+PRIMARY TEXT:        #212121
+SECONDARY TEXT:      #727272
+DIVIDER COLOR:       #B6B6B6
+*/
+
+* {
+  font-family: "RobotoDraft","Roboto","Helvetica Neue", "Segoe UI", sans-serif;
+}/* Empty. Add your own CSS if you like */
+
+ion-content{
+  color: #212121 !important;  
 }
+
+/* MATERIAL DESIGN CODES */
+
+/*TEXT !*/
+.display4{
+  font-size: 112px !important;
+  font-weight: 300 !important;
+}
+
+.display3{
+  font-size: 56px !important;
+  font-weight: 400 !important;
+}
+
+.display2{
+  font-size: 45px !important;
+  font-weight: 400 !important;
+}
+
+.display1{
+  font-size: 34px !important;
+  font-weight: 400 !important;
+}
+
+.headline{
+  font-size: 24px !important;
+  font-weight: 400 !important;
+}
+
+.title{
+  font-size: 20px !important;
+  font-weight: 500 !important;
+}
+
+.subheading, .input_text{
+  font-size: 16px !important;
+  font-weight: 400 !important;
+}
+
+.body2{
+  font-size: 14px !important;
+  font-weight: 500 !important;
+}
+
+.body1{
+  font-size: 14px !important;
+  font-weight: 400 !important;
+}
+
+.caption{
+  font-size: 12px !important;
+  font-weight: 400 !important;
+}
+
+.primary_text{
+  color: #212121 !important;
+}
+
+.secondary_text{
+  color: #727272 !important;
+}
+
+.divider{
+  color: #b6b6b6 !important;
+}
+
+/* END MATERIAL DESIGN*/
+
+.scroll{
+  height:100%;
+}
+
+.tabbed-slidebox .tsb-icons:after{
+  display:none;
+}
+
+ion-slide{
+  background: #fafafa !important;
+  text-align: left;
+}
+
+/*SELL TABS*/
+
+.sell_tabs .col button{
+  font-size: 2em !important;
+  padding-top: 0;
+}
+
+.sell_tabs .col:first-child{
+  padding-left: 0px;
+  
+  overflow: hidden !important;
+}
+
+.sell_tabs .col.middle{
+  text-align: center;
+}
+
+.sell_tabs button{
+  padding: 0;
+}
+
+.sell_tabs .col:last-child{
+  text-align: right;
+  padding-right: 0px;
+}
+
+#about_list, #about_list a.item-content{
+  background: #fafafa;
+}
+
+
+

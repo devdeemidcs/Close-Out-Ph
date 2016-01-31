@@ -58,11 +58,23 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
       }
     }
   })
-  
-  
+
+  //ACCOUNTS
+
+  .state('app.account', {
+    url: '/account',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/account.html'
+      }
+    }
+  })
+
+
+
   ;
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/about');
-  
+
 });
