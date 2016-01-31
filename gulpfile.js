@@ -6,12 +6,23 @@ var sass = require('gulp-sass');
 var minifyCss = require('gulp-minify-css');
 var rename = require('gulp-rename');
 var sh = require('shelljs');
+var typescript = require('gulp-tsc');
 
 var paths = {
-  sass: ['./scss/**/*.scss']
+  sass: ['./scss/**/*.scss'],
+  typescript: ['./www/scripts/**/*.ts'] 
 };
 
-gulp.task('default', ['sass']);
+gulp.task('default', ['sass', 'compile']);
+
+function compileTypeScript(done){
+    gulp.src(paths.typescript)
+        .pipe(typescript({sourcemap: true, out: 'tslib.js', sourceRoot: '../scripts'}))
+        .pipe(gulp.dest('./www/js/'))
+        .on('end', done);
+}
+
+gulp.task('compile', compileTypeScript);
 
 gulp.task('sass', function(done) {
   gulp.src('./scss/ionic.app.scss')
