@@ -1,0 +1,38 @@
+<ion-modal-view>
+  <ion-header-bar class="bar-calm">
+    <h1 class="title">Register</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="CloseModal()">
+        <i class="icon ion-close-circled"></i>
+      </button>
+    </div>
+  </ion-header-bar>
+  
+  <ion-content class="padding">
+    <div class="logo_container">
+      <center><img src="img/icon.png" height="225px" width="225px" ></center>
+    </div>
+
+    <ion-list>
+      
+      <ion-item class="item-input item-floating-label">
+        <span class="input-label">Username</span>
+        <input type="text" placeholder="Username">
+      </ion-item>
+      
+      <ion-item class="item-input item-floating-label">
+        <span class="input-label">Email</span>
+        <input type="email" placeholder="Email">
+      </ion-item>
+      
+      <ion-item class="item-input item-floating-label">
+        <span class="input-label">Password</span>
+        <input type="password" placeholder="Password">
+      </ion-item>
+      
+      <button class="button button-block button-calm" ng-click="Register()">Register</button>
+      
+    </ion-list>
+    
+  </ion-content>
+</ion-modal-view>

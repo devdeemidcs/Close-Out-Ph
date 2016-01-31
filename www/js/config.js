@@ -60,12 +60,14 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
   })
 
   //ACCOUNTS
-
-  .state('app.account', {
-    url: '/account',
+  
+  //LOGIN AND REGISTER
+  .state('app.login', {
+    url: '/login',
     views: {
       'menuContent': {
-        templateUrl: 'templates/account.html'
+        templateUrl: 'templates/login.html',
+        controller: 'AccountCtrl'
       }
     }
   })

@@ -133,6 +133,10 @@ ion-slide{
 
 #specs_list p, #specs_list h2, #specs_list i, #specs_list a, #nav_list i, #nav_list a{
   background: #fafafa;
+} 
+
+#nav_list a h2{
+  margin-left: 16px !important;  
 }
 
 .justify{

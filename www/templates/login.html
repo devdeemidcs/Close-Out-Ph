@@ -1,0 +1,28 @@
+<ion-view view-title="Log In">
+
+  <ion-content class="padding">
+
+    <div class="logo_container">
+      <center><img src="img/icon.png" height="225px" width="225px" ></center>
+    </div>
+
+    <ion-list>
+      
+      <ion-item class="item-input item-floating-label">
+        <span class="input-label">Username</span>
+        <input type="text" placeholder="Username">
+      </ion-item>
+      <ion-item class="item-input item-floating-label">
+        <span class="input-label">Password</span>
+        <input type="password" placeholder="Password">
+      </ion-item>
+      
+      <button class="button button-block button-calm" ng-click="Login()">Log In</button>
+      <center><p>Or</p></center>
+      <button class="button button-block button-calm" ng-click="OpenModal()">Register</button>
+      
+    </ion-list>
+
+  </ion-content>
+
+</ion-view>

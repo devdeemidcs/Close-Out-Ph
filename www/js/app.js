@@ -1,3 +1,5 @@
+/// <reference path="../../typings/angularjs/angular.d.ts" />
+
 // Ionic Starter App
 
 // angular.module is a global place for creating, registering and retrieving Angular modules
@@ -5,7 +7,6 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
 var app = angular.module('starter', ['ionic', 'ionic-material']);
-
 
 app.run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
