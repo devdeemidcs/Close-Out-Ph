@@ -127,7 +127,7 @@ ion-slide{
   padding-right: 0px;
 }
 
-#about_list, #about_list a.item-content, #specs_list, #specs_list a.item-content,  #nav_list, #nav_list a.item-content{
+#about_list, #about_list a.item-content, #specs_list, #specs_list a.item-content, #nav_list, #nav_list a.item-content{
   background: #fafafa;
 }
 
@@ -137,6 +137,10 @@ ion-slide{
 
 #nav_list a h2{
   margin-left: 16px !important;  
+}
+
+.grey_background_list, .grey_background_list a.item-content, .grey_background_list p, .grey_background_list h2, .grey_background_list i, .grey_background_list a{
+  background: #fafafa;
 }
 
 .justify{
@@ -150,4 +154,8 @@ ion-slide{
 span.secondary-buttons, span.secondary-buttons a {
   position: relative;
   top: 2px;
+}
+
+.highlight {
+  color: #009688 !important;
 }

@@ -172,6 +172,8 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
       }
     }
   })
+  
+  //ITEMS - SEARCH
   .state('app.search', {
     url: '/search',
     views: {
@@ -181,6 +183,8 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
       }
     }
   })
+  
+  //ITEMS - MAIN CAETEGORY
   .state('app.categories', {
     url: '/categories',
     views: {
@@ -190,10 +194,33 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
       }
     }
   })
+  
+  //ITEMS - SUB CATEGORY
+  .state('app.categories/sub_categories', {
+    url: '/categories/:main',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/sub_categories.html',
+        controller: 'SubCategoriesCtrl'
+      }
+    }
+  })
+
+  //ITEMS - CATEGORY RESULTS
+  .state('app.categories/sub_categories/category_results', {
+    url: '/categories/:main/:sub',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/category_results.html',
+        controller: 'CategoryResultsCtrl'
+      }
+    }
+  })
+  
 
   ;
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/about');
+  $urlRouterProvider.otherwise('/app/home');
 
 });

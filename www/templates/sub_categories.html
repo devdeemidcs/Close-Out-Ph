@@ -1,11 +1,11 @@
-<ion-view view-title="Categories">
+<ion-view view-title="{{main_category}}">
   
   <ion-content class="padding">
     
     <ion-list class="grey_background_list">
       
-      <ion-item ng-repeat="c in categories" href="#/app/categories/{{c.name}}">
-        {{c.name}}
+      <ion-item ng-repeat="s in sub_categories" href="#/app/categories/{{main_category}}/{{s}}">
+        {{s}}
       </ion-item>
       
     </ion-list>

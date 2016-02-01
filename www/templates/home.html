@@ -1,8 +1,56 @@
 <ion-view view-title="Home">
-  
-  <ion-content class="padding">
-    
-    
+
+  <ion-content>
+    <tab-slide-box tab="0">
+      <div class="tsb-icons">
+        <div class="tsb-ic-wrp">
+          <a href="javascript:;">FEATURED</a>
+          <a href="javascript:;">NEAR ME</a>
+          <a href="javascript:;">ITEMS FOR SALE</a>
+          <a href="javascript:;">LOOKING FOR</a>
+        </div>
+      </div>
+      <ion-slide-box show-pager="false" on-slide-changed="slideHasChanged($index)" scroll="true">
+
+        <ion-slide>
+
+          <ion-content>
+            <div class="row" style="flex-wrap: wrap; -webkit-flex-wrap:row-wrap; padding-bottom:0px; margin-bottom:0;">
+              <div class="col col-50" ng-repeat="item in items">
+                <div class="list card" style="margin:0">
+                  <div class="item item-image">
+                    <img ng-src="img/about/{{item.url}}" height="{{image_height}}">
+                  </div>
+                  <ion-item ng-href="#/app/sell">
+
+                    <label class="body2">{{item.name}}</label>
+                    <p class="body1">Php 1,000</p>
+
+                  </ion-item>
+                </div>
+              </div>
+            </div>
+          </ion-content>
+
+        </ion-slide>
+
+        <ion-slide>
+          <h3 class="title">Near Me</h3>
+        </ion-slide>
+
+        <ion-slide>
+          <h3 class="title">Items For Sale</h3>
+        </ion-slide>
+
+        <ion-slide>
+          <h3 class="title">Searches</h3>
+        </ion-slide>
+
+
+      </ion-slide-box>
+    </tab-slide-box>
+
+
 
   </ion-content>
 

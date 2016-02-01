@@ -8,6 +8,6 @@
 
 app.controller('MenuCtrl', ['$scope', '$rootScope', function($scope, $rootScope){
     
-  
+  console.log($rootScope);
     
 }]);
