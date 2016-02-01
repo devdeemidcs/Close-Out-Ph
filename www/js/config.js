@@ -12,6 +12,7 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
     controller: 'MenuCtrl'
   })
 
+  //OTHERS
   //****************** ABOUT
   .state('app.about', {
     url: '/about',
@@ -60,6 +61,15 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
     }
   })
 
+  .state('app.settings', {
+    url: '/settings',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/settings.html'
+      }
+    }
+  })
+
   //********************** ACCOUNTS
   //LOGIN AND REGISTER
   .state('app.login', {
@@ -94,8 +104,19 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
     }
   })
   
+  //PROFILE - MESSAGES
+  .state('app.messages', {
+    url: '/messages',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/messages.html',
+        controller: 'MessagesCtrl'
+      }
+    }
+  })
+  
   //PROFILE - DEALS
-  .state('app/deals', {
+  .state('app.deals', {
     url: '/deals',
     views: {
       'menuContent': {
@@ -125,6 +146,47 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
       'menuContent': {
         templateUrl: 'templates/look.html',
         controller: 'LookCtrl'
+      }
+    }
+  })
+  
+  //******************ITEMS
+  //ITEMS - HISTORY
+  .state('app.history', {
+    url: '/history',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/history.html',
+        controller: 'HistoryCtrl'
+      }
+    }
+  })
+  
+  //ITEMS - HOME
+  .state('app.home', {
+    url: '/home',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/home.html',
+        controller: 'HomeCtrl'
+      }
+    }
+  })
+  .state('app.search', {
+    url: '/search',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/search.html',
+        controller: 'SearchCtrl'
+      }
+    }
+  })
+  .state('app.categories', {
+    url: '/categories',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/categories.html',
+        controller: 'CategoriesCtrl'
       }
     }
   })
