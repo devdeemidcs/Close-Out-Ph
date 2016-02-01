@@ -1,5 +1,6 @@
-app.controller('ProfileCtrl', ['$scope', '$ionicPopover', function($scope, $ionicPopover){
+app.controller('ProfileCtrl', ['$scope', '$ionicPopover', '$message', function($scope, $ionicPopover, $message){
   
+  //POPOVER CODES
   // .fromTemplateUrl() method
   $ionicPopover.fromTemplateUrl('templates/popovers/profile.html', {
     scope: $scope
@@ -25,5 +26,12 @@ app.controller('ProfileCtrl', ['$scope', '$ionicPopover', function($scope, $ioni
   $scope.$on('popover.removed', function() {
     // Execute action
   });
+  //END POPOVER
+  
+  $scope.LogOut = function(){
+    $message.ShowConfirm('Closeout Ph', 'Are you sure you want to log out?', function(){
+      //Log out codes...
+    })
+  }
   
 }])

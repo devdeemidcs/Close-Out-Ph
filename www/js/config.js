@@ -12,6 +12,7 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
     controller: 'MenuCtrl'
   })
 
+  //****************** ABOUT
   .state('app.about', {
     url: '/about',
     views: {
@@ -59,8 +60,7 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
     }
   })
 
-  //ACCOUNTS
-  
+  //********************** ACCOUNTS
   //LOGIN AND REGISTER
   .state('app.login', {
     url: '/login',
@@ -84,12 +84,47 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
   })
   
   //EDIT PROFILE
-  .state('app.pofile/edit', {
+  .state('app.profile/edit', {
     url: '/edit',
     views: {
       'menuContent': {
         templateUrl: 'templates/edit_profile.html',
         controller: 'EditProfileCtrl'
+      }
+    }
+  })
+  
+  //PROFILE - DEALS
+  .state('app/deals', {
+    url: '/deals',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/deals.html',
+        controller: 'DealsCtrl'
+      }
+    }
+  })
+  
+  
+  //************* POSTS
+  //POST - SELL
+  .state('app.sell', {
+    url: '/sell',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/sell.html',
+        controller: 'SellCtrl'
+      }
+    }
+  })
+  
+  //POST - SELL
+  .state('app.look', {
+    url: '/look',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/look.html',
+        controller: 'LookCtrl'
       }
     }
   })
