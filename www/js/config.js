@@ -81,7 +81,7 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
       }
     }
   })
-  
+
   //PROFILE
   .state('app.profile', {
     url: '/profile',
@@ -92,7 +92,7 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
       }
     }
   })
-  
+
   //EDIT PROFILE
   .state('app.profile/edit', {
     url: '/edit',
@@ -103,7 +103,7 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
       }
     }
   })
-  
+
   //PROFILE - MESSAGES
   .state('app.messages', {
     url: '/messages',
@@ -114,7 +114,7 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
       }
     }
   })
-  
+
   //PROFILE - DEALS
   .state('app.deals', {
     url: '/deals',
@@ -125,8 +125,8 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
       }
     }
   })
-  
-  
+
+
   //************* POSTS
   //POST - SELL
   .state('app.sell', {
@@ -138,7 +138,7 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
       }
     }
   })
-  
+
   //POST - SELL
   .state('app.look', {
     url: '/look',
@@ -149,7 +149,7 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
       }
     }
   })
-  
+
   //******************ITEMS
   //ITEMS - HISTORY
   .state('app.history', {
@@ -161,7 +161,7 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
       }
     }
   })
-  
+
   //ITEMS - HOME
   .state('app.home', {
     url: '/home',
@@ -172,7 +172,7 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
       }
     }
   })
-  
+
   //ITEMS - SEARCH
   .state('app.search', {
     url: '/search',
@@ -183,7 +183,7 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
       }
     }
   })
-  
+
   //ITEMS - MAIN CAETEGORY
   .state('app.categories', {
     url: '/categories',
@@ -194,7 +194,7 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
       }
     }
   })
-  
+
   //ITEMS - SUB CATEGORY
   .state('app.categories/sub_categories', {
     url: '/categories/:main',
@@ -216,7 +216,7 @@ app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
       }
     }
   })
-  
+
 
   ;
 

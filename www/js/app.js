@@ -6,12 +6,35 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-var app = angular.module('starter', ['ionic', 'ionic-material', 'tabSlideBox', 'tabSlideBoxScrollExtension']);
+var app = angular.module('starter', ['ionic', 'ionic-material', 'tabSlideBox', 'tabSlideBoxScrollExtension', 'firebase']);
 
-app.run(function($ionicPlatform, $rootScope) {
-  
+app.run(function($ionicPlatform, $rootScope, $ionicHistory) {
+
   $rootScope.current_view = "home";
-  
+  $rootScope.loggedIn = false;
+  $rootScope.userInfo;
+
+  if (localStorage.getItem('dev_c')) {
+    //if user info exists...
+
+    $rootScope.userInfo = JSON.parse(localStorage.getItem('dev_c'));
+    $rootScope.loggedIn = true;
+    //redirect to my profile
+
+    //remove history
+    $ionicHistory.clearHistory();
+    $ionicHistory.nextViewOptions({
+      disableAnimate: true,
+      disableBack: true
+    });
+
+    //go to next page
+    $rootScope.current_view = 'profile';
+    location.href = '#/app/profile';
+    $ionicHistory.clearHistory();
+
+  }
+
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)

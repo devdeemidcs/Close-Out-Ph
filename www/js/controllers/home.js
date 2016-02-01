@@ -1,75 +1,21 @@
-app.controller('HomeCtrl', ['$scope', '$rootScope', '$ionicSideMenuDelegate', function($scope, $rootScope, $ionicSideMenuDelegate){
+app.controller('HomeCtrl', ['$scope', '$rootScope', '$ionicSideMenuDelegate', '$firebaseArray', function($scope, $rootScope, $ionicSideMenuDelegate, $firebaseArray){
   
   $ionicSideMenuDelegate.canDragContent(false);
   
   $scope.image_height = screen.height / 5;
-  console.log(screen.height);
-  $scope.items = [
-    { 
-      name: 'dee mid rak dee mid rak is ',
-      age: 23,
-      url: 'handout_icon.jpg'
-    },
-    { 
-      name: 'kurei',
-      age: 23,
-      url: 'bl_icon.png'
-    },
-    { 
-      name: 'kurenai',
-      age: 23,
-      url: 'algebra_icon.png'
-    },
-    { 
-      name: 'recca',
-      age: 23,
-      url: 'handout_cover.jpg'
-    },
-    { 
-      name: 'kaoru',
-      age: 23,
-      url: 'handout_icon.jpg'
-    },
-    { 
-      name: 'kurei',
-      age: 23,
-      url: 'bl_icon.png'
-    },
-    { 
-      name: 'kurenai',
-      age: 23,
-      url: 'algebra_icon.png'
-    },
-    { 
-      name: 'recca',
-      age: 23,
-      url: 'handout_cover.jpg'
-    },
-    { 
-      name: 'kaoru',
-      age: 23,
-      url: 'handout_icon.jpg'
-    },
-    { 
-      name: 'kurei',
-      age: 23,
-      url: 'bl_icon.png'
-    },
-    { 
-      name: 'kurenai',
-      age: 23,
-      url: 'algebra_icon.png'
-    },
-    { 
-      name: 'recca',
-      age: 23,
-      url: 'handout_cover.jpg'
-    },
-    { 
-      name: 'kaoru',
-      age: 23,
-      url: 'handout_icon.jpg'
-    }
-  ]
-    
+  
+  
+  var ref = new Firebase('https://nvchrry.firebaseio.com/');
+  
+  
+  
+  var userRef = ref.child('users').orderByChild('tag1').startAt('dee').endAt('dee');
+  var users = $firebaseArray(userRef);
+  console.log(users);
+  
+  users.$loaded().then(function(){
+    console.log(users);
+    $scope.users = users;
+  })
+  
 }]);

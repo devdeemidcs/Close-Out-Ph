@@ -16,7 +16,7 @@
     <ion-header-bar class="bar-calm">
       <h1 class="title">Close Out PH</h1>
     </ion-header-bar>
-    <ion-content>
+    <ion-content delegate-handle="side_menu_scroll">
       
       <ion-list id="nav_list">
          
@@ -62,24 +62,29 @@
           <h2 class="body2 secondary_text">Account</h2>  
         </div>
 
-        <a menu-close class="item item-icon-left" href="#/app/login">
-          <i class="icon ion-log-in secondary_text"></i>
-          <h2 class="body2 primary_text">Log In</h2>
+        <a menu-close class="item item-icon-left" href="#/app/login" ng-click="Select('login')" ng-hide="$root.loggedIn">
+          <i ng-class="{'icon': true, 'ion-log-in': true, 'secondary_text': true, 'highlight': $root.current_view == 'login'}"></i>
+          <h2 ng-class="{'body2': true, 'primary_text':true, 'highlight': $root.current_view == 'login'}">Log In</h2>
         </a>
 
-        <a menu-close class="item item-icon-left" href="#/app/profile" ng-click="Select('profile')">
+        <a menu-close class="item item-icon-left" href="#/app/profile" ng-click="Select('profile')" ng-hide="!$root.loggedIn">
           <i ng-class="{'icon': true, 'ion-person': true, 'secondary_text': true, 'highlight': $root.current_view == 'profile'}"></i>
           <h2 ng-class="{'body2': true, 'primary_text':true, 'highlight': $root.current_view == 'profile'}">My Profile</h2>
         </a>
 
-        <a menu-close class="item item-icon-left" href="#/app/messages" ng-click="Select('messages')">
+        <a menu-close class="item item-icon-left" href="#/app/messages" ng-click="Select('messages')" ng-hide="!$root.loggedIn">
           <i ng-class="{'icon': true, 'ion-email': true, 'secondary_text': true, 'highlight': $root.current_view == 'messages'}"></i>
           <h2 ng-class="{'body2': true, 'primary_text':true, 'highlight': $root.current_view == 'messages'}">Messages</h2>
         </a>
 
-        <a menu-close class="item item-icon-left list_border" href="#/app/deals" ng-click="Select('deals')">
+        <a menu-close class="item item-icon-left list_border" href="#/app/deals" ng-click="Select('deals')" ng-hide="!$root.loggedIn">
           <i ng-class="{'icon': true, 'ion-android-people': true, 'secondary_text': true, 'highlight': $root.current_view == 'deals'}"></i>
           <h2 ng-class="{'body2': true, 'primary_text':true, 'highlight': $root.current_view == 'deals'}">Deals</h2>
+        </a>
+
+        <a class="item item-icon-left" ng-click="Logout()" ng-hide="!$root.loggedIn">
+          <i class="icon ion-log-out secondary_text"></i>
+          <h2 class="body2 primary_text">Log Out</h2>
         </a>
          
         <div style="padding: 16px; padding-bottom: 0px">
