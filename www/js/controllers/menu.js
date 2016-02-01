@@ -9,5 +9,9 @@
 app.controller('MenuCtrl', ['$scope', '$rootScope', function($scope, $rootScope){
     
   console.log($rootScope);
-    
+  
+  $scope.Select = function(current_view){
+    $rootScope.current_view = current_view;
+  }
+  
 }]);

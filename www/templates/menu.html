@@ -23,39 +23,39 @@
         <div style="padding: 16px; padding-bottom: 0px">
           <h2 class="body2 secondary_text">Items</h2>  
         </div>
-<!--ng-class="{'icon': true, 'ion-home': true, 'secondary_text': true, 'highlight': $root.current_view = 'home'}"-->
-        <a menu-close class="item item-icon-left"" href="#/app/home">
-          <i class="icon ion-home secondary_text"></i>
-          <h2 class="body2 primary_text">Home</h2>
+
+        <a menu-close class="item item-icon-left"" href="#/app/home" ng-click="Select('home')">
+          <i ng-class="{'icon': true, 'ion-home': true, 'secondary_text': true, 'highlight': $root.current_view == 'home'}"></i>
+          <h2 ng-class="{'body2': true, 'primary_text':true, 'highlight': $root.current_view == 'home'}">Home</h2>
         </a>
 
-        <a menu-close class="item item-icon-left" href="#/app/categories">
-          <i class="icon ion-asterisk secondary_text"></i>
-          <h2 class="body2 primary_text">Categories</h2>
+        <a menu-close class="item item-icon-left" href="#/app/categories" ng-click="Select('categories')">
+          <i ng-class="{'icon': true, 'ion-asterisk': true, 'secondary_text': true, 'highlight': $root.current_view == 'categories'}"></i>
+          <h2 ng-class="{'body2': true, 'primary_text':true, 'highlight': $root.current_view == 'categories'}">Categories</h2>
         </a>
 
-        <a menu-close class="item item-icon-left" href="#/app/search">
-          <i class="icon ion-search secondary_text"></i>
-          <h2 class="body2 primary_text">Search</h2>
+        <a menu-close class="item item-icon-left" href="#/app/search" ng-click="Select('search')">
+          <i ng-class="{'icon': true, 'ion-search': true, 'secondary_text': true, 'highlight': $root.current_view == 'search'}"></i>
+          <h2 ng-class="{'body2': true, 'primary_text':true, 'highlight': $root.current_view == 'search'}">Search</h2>
         </a>
 
-        <a menu-close class="item item-icon-left list_border" href="#/app/history">
-          <i class="icon ion-android-arrow-dropleft-circle secondary_text"></i>
-          <h2 class="body2 primary_text">History</h2>
+        <a menu-close class="item item-icon-left list_border" href="#/app/history" ng-click="Select('history')">
+          <i ng-class="{'icon': true, 'ion-android-arrow-dropleft-circle': true, 'secondary_text': true, 'highlight': $root.current_view == 'history'}"></i>
+          <h2 ng-class="{'body2': true, 'primary_text':true, 'highlight': $root.current_view == 'history'}">History</h2>
         </a>
          
         <div menu-close style="padding: 16px; padding-bottom: 0px">
           <h2 class="body2 secondary_text">Post</h2>  
         </div>
 
-        <a menu-close class="item item-icon-left" href="#/app/sell">
-          <i class="icon ion-pricetag secondary_text"></i>
-          <h2 class="body2 primary_text">Sell</h2>
+        <a menu-close class="item item-icon-left" href="#/app/sell" ng-click="Select('sell')">
+          <i ng-class="{'icon': true, 'ion-pricetag': true, 'secondary_text': true, 'highlight': $root.current_view == 'sell'}"></i>
+          <h2 ng-class="{'body2': true, 'primary_text':true, 'highlight': $root.current_view == 'sell'}">Sell</h2>
         </a>
 
-        <a menu-close class="item item-icon-left list_border" href="#/app/look">
-          <i class="icon ion-ios-eye secondary_text"></i>
-          <h2 class="body2 primary_text">Look For</h2>
+        <a menu-close class="item item-icon-left list_border" href="#/app/look" ng-click="Select('look')">
+          <i ng-class="{'icon': true, 'ion-ios-eye': true, 'secondary_text': true, 'highlight': $root.current_view == 'look'}"></i>
+          <h2 ng-class="{'body2': true, 'primary_text':true, 'highlight': $root.current_view == 'look'}">Look For</h2>
         </a>
          
         <div style="padding: 16px; padding-bottom: 0px">
@@ -67,33 +67,33 @@
           <h2 class="body2 primary_text">Log In</h2>
         </a>
 
-        <a menu-close class="item item-icon-left" href="#/app/profile">
-          <i class="icon ion-person secondary_text"></i>
-          <h2 class="body2 primary_text">My Profile</h2>
+        <a menu-close class="item item-icon-left" href="#/app/profile" ng-click="Select('profile')">
+          <i ng-class="{'icon': true, 'ion-person': true, 'secondary_text': true, 'highlight': $root.current_view == 'profile'}"></i>
+          <h2 ng-class="{'body2': true, 'primary_text':true, 'highlight': $root.current_view == 'profile'}">My Profile</h2>
         </a>
 
-        <a menu-close class="item item-icon-left" href="#/app/messages">
-          <i class="icon ion-email secondary_text"></i>
-          <h2 class="body2 primary_text">Messages</h2>
+        <a menu-close class="item item-icon-left" href="#/app/messages" ng-click="Select('messages')">
+          <i ng-class="{'icon': true, 'ion-email': true, 'secondary_text': true, 'highlight': $root.current_view == 'messages'}"></i>
+          <h2 ng-class="{'body2': true, 'primary_text':true, 'highlight': $root.current_view == 'messages'}">Messages</h2>
         </a>
 
-        <a menu-close class="item item-icon-left list_border" href="#/app/deals">
-          <i class="icon ion-android-people secondary_text"></i>
-          <h2 class="body2 primary_text">Deals</h2>
+        <a menu-close class="item item-icon-left list_border" href="#/app/deals" ng-click="Select('deals')">
+          <i ng-class="{'icon': true, 'ion-android-people': true, 'secondary_text': true, 'highlight': $root.current_view == 'deals'}"></i>
+          <h2 ng-class="{'body2': true, 'primary_text':true, 'highlight': $root.current_view == 'deals'}">Deals</h2>
         </a>
          
         <div style="padding: 16px; padding-bottom: 0px">
           <h2 class="body2 secondary_text">Others</h2>  
         </div>
         
-        <a menu-close class="item item-icon-left list_border" href="#/app/about">
-          <i class="icon ion-information-circled secondary_text"></i>
-          <h2 class="body2 primary_text">About</h2>
+        <a menu-close class="item item-icon-left list_border" href="#/app/about" ng-click="Select('about')">
+          <i ng-class="{'icon': true, 'ion-information-circled': true, 'secondary_text': true, 'highlight': $root.current_view == 'about'}"></i>
+          <h2 ng-class="{'body2': true, 'primary_text':true, 'highlight': $root.current_view == 'about'}">About</h2>
         </a>
         
-        <a menu-close class="item item-icon-left list_border" href="#/app/settings">
-          <i class="icon ion-gear-a secondary_text"></i>
-          <h2 class="body2 primary_text">Settings</h2>
+        <a menu-close class="item item-icon-left list_border" href="#/app/settings" ng-click="Select('settings')">
+          <i ng-class="{'icon': true, 'ion-gear-a': true, 'secondary_text': true, 'highlight': $root.current_view == 'settings'}"></i>
+          <h2 ng-class="{'body2': true, 'primary_text':true, 'highlight': $root.current_view == 'settings'}">Settings</h2>
         </a>
         
       </ion-list>
