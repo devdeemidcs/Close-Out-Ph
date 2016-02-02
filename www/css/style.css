@@ -139,7 +139,7 @@ ion-slide{
   margin-left: 16px !important;  
 }
 
-.grey_background_list, .grey_background_list a.item-content, .grey_background_list p, .grey_background_list h2, .grey_background_list i, .grey_background_list a{
+.grey_background_list, .grey_background_list a.item-content, .grey_background_list p, .grey_background_list h2, .grey_background_list i, .grey_background_list a,  .grey_background_list ion-item{
   background: #fafafa;
 }
 

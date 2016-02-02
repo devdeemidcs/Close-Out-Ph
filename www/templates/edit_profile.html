@@ -1,8 +1,60 @@
 <ion-view view-title="Edit Profile">
-  
+
   <ion-content class="padding">
+
+    <br>
+    <div class="group">
+      <input class="md-input" type="text" required ng-model="data.first_name">
+      <span class="md-highlight"></span>
+      <span class="md-bar"></span>
+      <label>First Name</label>
+    </div>
+    <div class="group">
+      <input class="md-input" type="text" required ng-model="data.last_name">
+      <span class="md-highlight"></span>
+      <span class="md-bar"></span>
+      <label>Last Name</label>
+    </div>
+    <div class="group">
+      <input class="md-input" type="text" required ng-model="data.email">
+      <span class="md-highlight"></span>
+      <span class="md-bar"></span>
+      <label>Email Address</label>
+    </div>
+    <div class="group">
+      <input class="md-input" type="number" required ng-model="data.contact_number">
+      <span class="md-highlight"></span>
+      <span class="md-bar"></span>
+      <label>Contact Number</label>
+    </div>
+
+    <button class="button button-calm button-block" ng-click="Save()">Save</button>
+
+    <!--<ion-list class="grey_background_list">
+      
+      
+
+      
+      <ion-item class="item-input">
+        <span class="input-label">First Name</span>
+        <input type="text">
+      </ion-item>
+      
+      <ion-item class="item-input">
+        <span class="input-label">Last Name</span>
+        <input type="text">
+      </ion-item>
     
-    
+      <ion-item class="item-input">
+        <span class="input-label">Email Address</span>
+        <input type="text">
+      </ion-item>
+      
+      <ion-item class="item-input">
+        <span class="input-label">Contact Number</span>
+        <input type="text">
+      </ion-item>
+    </ion-list>-->
 
   </ion-content>
 

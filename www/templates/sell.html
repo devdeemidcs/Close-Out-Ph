@@ -2,7 +2,14 @@
   
   <ion-content class="padding">
     
+    <div class="spacer" style="height: {{half_screen}}px">
+      
+    </div>
     
+    <center ng-hide="$root.loggedIn">
+      <i class="icon ion-android-warning divider" style="font-size: 120px;"></i>
+      <p class="divider title">Please log in to sell items</p>
+    </center>
 
   </ion-content>
 

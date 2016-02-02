@@ -1,0 +1,77 @@
+.group        { 
+  position:relative; 
+  margin-bottom:45px; 
+}
+.md-input         {
+  font-size:18px;
+  padding:10px 10px 10px 5px;
+  display:block;
+  width: 100%;
+  border:none;
+  border-bottom:1px solid #e0e0e0 !important;
+  background: #fafafa;
+}
+.md-input:focus     { outline:none; }
+
+/* LABEL ======================================= */
+label          {
+  color:#999; 
+  font-size:18px;
+  font-weight:normal;
+  position:absolute;
+  pointer-events:none;
+  top:10px;
+  transition:0.2s ease all; 
+}
+
+/* active state */
+.md-input:focus ~ label, .md-input:valid ~ label     {
+  top:-20px;
+  font-size:14px;
+  color:#FFC107;
+}
+
+/* BOTTOM BARS ================================= */
+.md-bar  { position:relative; display:block; width: 100%; }
+.md-bar:before, .md-bar:after   {
+  content:'';
+  height:2px; 
+  width:0;
+  bottom:1px; 
+  position:absolute;
+  background:#FFC107; 
+  transition:0.2s ease all; 
+}
+.md-bar:before {
+  left:50%;
+}
+.md-bar:after {
+  right:50%; 
+}
+
+/* active state */
+.md-input:focus ~ .md-bar:before, .md-input:focus ~ .md-bar:after {
+  width:50%;
+}
+
+/* HIGHLIGHTER ================================== */
+.md-highlight {
+  position:absolute;
+  height:60%; 
+  width:100px; 
+  top:25%; 
+  left:0;
+  pointer-events:none;
+  opacity:0.5;
+}
+
+/* active state */
+.md-input:focus ~ .md-highlight {
+  animation:md-inputHighlighter 0.3s ease;
+}
+
+/* ANIMATIONS ================ */
+@keyframes md-inputHighlighter {
+  from  { background:#FFC107; }
+  to    { width:0; background:transparent; }
+}

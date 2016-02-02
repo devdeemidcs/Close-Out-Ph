@@ -1,14 +1,44 @@
 <ion-view view-title="My Profile">
-  
+
   <ion-nav-buttons side="secondary">
     <a class="button button-clear" ng-click="OpenPopover($event)">
       <i class="icon ion-android-more-vertical"></i>
     </a>
-  </ion-nav-buttons> 
+  </ion-nav-buttons>
 
-  <ion-content class="padding">
-    
-    
+  <ion-content>
+
+    <ion-list class="grey_background_list">
+
+      <!-- HIDDEN INPUT FILE FOR UPLOADING PROFILE PIC -->
+      <input type="file" id="profile_select" accept="image/*" style="display:none">
+      <img src="" id="profile_pic" style="display:none">
+      
+      
+      <div class="padding" style="height:250px">
+        <center ng-show="$root.userInfo.url" style="width:100%">
+          <img ng-src="http://devdeemid.host22.com/uploads/{{$root.userInfo.url}}" style="width:100%; height: auto; max-height:250px">
+        </center>
+        <center ng-show="!$root.userInfo.url" style="width:100%">
+          <img ng-src="img/default.jpg" style="width:100%; height: auto; max-height:250px">
+        </center>
+      </div>
+
+      <h3 class="subheading padding" style="padding-bottom:0px !important; margin-bottom:0">Personal Information</h3>
+
+      <ion-item class="item-icon-left">
+        <i class="icon ion-person"></i> {{$root.userInfo.hasOwnProperty('first_name') ? $root.userInfo.first_name + ' ' + $root.userInfo.last_name : $root.userInfo.username}}
+      </ion-item>
+
+      <ion-item class="item-icon-left">
+        <i class="icon ion-email"></i> {{$root.userInfo.email}}
+      </ion-item>
+
+      <ion-item class="item-icon-left">
+        <i class="icon ion-android-call"></i> {{$root.userInfo.contact_number}}
+      </ion-item>
+
+    </ion-list>
 
   </ion-content>
 
