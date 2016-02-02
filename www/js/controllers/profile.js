@@ -141,11 +141,8 @@ app.controller('ProfileCtrl', ['$scope', '$ionicPopover', '$message', '$ionicLoa
   
   function completeHandler(event){
     
-    $scope.HideLoading();
-    console.log('Uploading image completed, Closing Loading...')
     
     $rootScope.userInfo.url = $scope.file_name;
-    console.log('Updated $root.userInfo.url: ', $rootScope.userInfo.url);
     
     var id = $rootScope.userInfo.$id;
     delete $rootScope.userInfo['$id'];
@@ -159,9 +156,10 @@ app.controller('ProfileCtrl', ['$scope', '$ionicPopover', '$message', '$ionicLoa
       }
       
       $rootScope.userInfo.$id = id;
-      $scope.HideLoading();
       
       localStorage.setItem('dev_c', JSON.stringify($rootScope.userInfo));
+      
+      $scope.HideLoading();
     });
   }
 

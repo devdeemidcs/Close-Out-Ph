@@ -156,6 +156,43 @@ span.secondary-buttons, span.secondary-buttons a {
   top: 2px;
 }
 
+.g_b{
+  background: #fafafa !important;
+}
+
 .highlight {
   color: #009688 !important;
+}
+
+.hidden{
+  display: none;
+}
+
+.no_padding{
+  padding: 0px !important;
+}
+
+.no_padding_top{
+  padding-top: 0px !important;
+}
+
+.no_padding_left{
+  padding-left: 0px !important;
+}
+
+.row .col:first-child{
+  padding-left: 0px;
+}
+
+.row .col:last-child{
+  padding-right: 0px;
+}
+
+/*SELL TABS*/
+.sell_tabs middle{
+  text-align: center;
+}
+
+.col button.button:disabled{
+  background: #fafafa;
 }

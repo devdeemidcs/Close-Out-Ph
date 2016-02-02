@@ -2,12 +2,12 @@
 
   <ion-content class="padding">
 
-    <div class="logo_container">
-      <center><img src="img/icon.png" height="225px" width="225px" ></center>
+    <div class="logo_container" style="margin-bottom: 25px">
+      <center><img src="img/icon.png" height="200px" width="200px"></center>
     </div>
 
     <ion-list>
-      
+<!--
       <ion-item class="item-input item-floating-label">
         <span class="input-label">Username</span>
         <input type="text" placeholder="Username" ng-model="l.username">
@@ -15,11 +15,26 @@
       <ion-item class="item-input item-floating-label">
         <span class="input-label">Password</span>
         <input type="password" placeholder="Password" ng-model="l.password">
-      </ion-item>
-      
+      </ion-item>-->
+      <div class="group">
+        <input class="md-input" type="text" required ng-model="l.username">
+        <span class="md-highlight"></span>
+        <span class="md-bar"></span>
+        <label>First Name</label>
+      </div>
+      <div class="group">
+        <input class="md-input" type="password" required ng-model="l.password">
+        <span class="md-highlight"></span>
+        <span class="md-bar"></span>
+        <label>Last Name</label>
+      </div>
+
       <button class="button button-block button-calm" ng-click="Login()">Log In</button>
-      <center><p>Or</p></center>
+      <center>
+        <p>Or</p>
+      </center>
       <button class="button button-block button-calm" ng-click="OpenModal()">Register</button>
+
       
     </ion-list>
 

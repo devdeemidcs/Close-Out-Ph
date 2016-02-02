@@ -11,6 +11,116 @@
       <p class="divider title">Please log in to post searches</p>
     </center>
 
+    <div class="div" style="padding:0px; margin:0px;" ng-hide="!$root.loggedIn">
+
+      <div class="row sell_tabs no_padding_top">
+        <div class="col no_padding_top">
+          <button class="button button-clear" ng-click="SetPage(1)">
+            <span class="calm">&#9312;</span>
+          </button>
+        </div>
+        <div class="col middle no_padding_top">
+          <button class="button button-clear" ng-click="SetPage(2)" ng-disabled="count == 0 || !l.name">
+            <span class="calm">&#9313;</span>
+          </button>
+        </div>
+        <div class="col no_padding_top">
+          <button class="button button-clear" ng-click="SetPage(3)" ng-disabled="count == 0 || !l.name || !l.province || !l.price || !l.sub_category || !l.main_category">
+            <span class="calm">&#9314;</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col" ng-show="current_page == 1">
+
+          <h1 class="subheading">Pictures</h1>
+          <p class="caption">The more pictures, the faster your item will sell!</p>
+          <button class="button button-clear button-outline button-calm" ng-click="OpenFile()"><i class="icon ion-plus"></i></button>
+
+          <div class="row no_padding image_row">
+            <div class="col"><img alt="" id="look_image1" style="width:100%"></div>
+            <div class="col"><img alt="" id="look_image2" style="width:100%"></div>
+            <div class="col"><img alt="" id="look_image3" style="width:100%"></div>
+            <div class="col"><img alt="" id="look_image4" style="width:100%"></div>
+          </div>
+
+          <!-- HIDDEN -->
+          <input type="file" id="look_items_select" accept="image/*" style="display:none" multiple>
+
+          <ion-list>
+            <label class="item item-input item-stacked-label subheading" style="padding-left:0px;">
+              <span class="input-label">Item</span>
+              <input type="text" placeholder="Enter the name of your product" style="background: #fafafa;" ng-model="l.name">
+            </label>
+          </ion-list>
+
+          <button class="button button-calm button-block" ng-disabled="count == 0 || !l.name" ng-click="SetPage(2)">Next</button>
+
+        </div>
+
+
+        <div class="col" ng-show="current_page == 2">
+
+          <ion-list>
+            <label class="item item-input item-stacked-label subheading" style="padding-left:0px;">
+              <span class="input-label">Price</span>
+              <input type="text" placeholder="₱ 0.00" style="background: #fafafa;" ng-model="l.price">
+            </label>
+
+            <label class="item item-input item-select g_b no_padding_left">
+              <div class="input-label g_b">
+                Location
+              </div>
+              <select ng-model="l.province" class="g_b">
+                <option>Zambales</option>
+                <option>Abra</option>
+                <option>Pampanga</option>
+              </select>
+            </label>
+
+            <label class="item item-input item-select g_b no_padding_left">
+              <div class="input-label g_b">
+                Main Category
+              </div>
+              <select ng-model="l.main_category" class="g_b">
+                <option value="{{c.name}}" ng-repeat="c in categories">{{c.name}}</option>
+              </select>
+            </label>
+            
+
+            <label class="item item-input item-select g_b no_padding_left">
+              <div class="input-label g_b">
+                Sub Category
+              </div>
+              <select ng-model="l.sub_category" class="g_b">
+                <option value="{{s}}" ng-repeat="s in GetSubs(l.main_category)">{{s}}</option>
+              </select>
+            </label>
+          </ion-list>
+
+          <button class="button button-calm button-block" ng-disabled="!l.province || !l.price || !l.sub_category || !l.main_category" ng-click="SetPage(3)">Next</button>
+        </div>
+        
+        
+        <div class="col" ng-show="current_page == 3">
+          
+          <item-list>
+            
+            <h3 class="subheading">Description</h3>
+            <ion-item class="item-input">
+              <textarea rows="10" ng-model="l.description" placeholder="Provide a detailed description of the item you're looking for. The more details, the better. Include information like item size, condition, preferred payment method, etc..."></textarea>
+            </ion-item>
+              
+            <button class="button button-calm button-block" ng-disabled="!l.description" ng-click="Upload()">Next</button>
+          </item-list>
+          
+        </div>
+        
+      </div>
+
+    </div>
+
   </ion-content>
 
 </ion-view>
