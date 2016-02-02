@@ -10,10 +10,18 @@
 app.controller('AccountCtrl', ['$scope', '$rootScope', '$ionicModal', '$message', '$ionicLoading', '$ionicHistory', function($scope, $rootScope, $ionicModal, $message, $ionicLoading, $ionicHistory) {
 
   //LOG IN AND REGISTER CONTROLLER
-
+  console.log('from account', $rootScope.onesignal_player_id);
   //initialize
   $scope.l = {};
   $scope.r = {};
+
+  $('input').blur(function() {
+    // check if the input has any value (if we've typed into it)
+    if ($(this).val())
+      $(this).addClass('used');
+    else
+      $(this).removeClass('used');
+  });
 
   //LOADING
   $scope.ShowLoading = function() {
@@ -64,7 +72,8 @@ app.controller('AccountCtrl', ['$scope', '$rootScope', '$ionicModal', '$message'
             email: $scope.r.email,
             firebase_timestamp: fb_timestamp,
             timestamp: timestamp,
-            premium: false
+            premium: false,
+            onesignal_player_id: $rootScope.onesignal_player_id || null
           }, function() {
             //on success adding
             $scope.HideLoading();
@@ -79,7 +88,8 @@ app.controller('AccountCtrl', ['$scope', '$rootScope', '$ionicModal', '$message'
                 email: $scope.r.email,
                 firebase_timestamp: fb_timestamp,
                 timestamp: timestamp,
-                premium: false
+                premium: false,
+                onesignal_player_id: $rootScope.onesignal_player_id || null
               }
 
               //save to local storage
@@ -130,12 +140,12 @@ app.controller('AccountCtrl', ['$scope', '$rootScope', '$ionicModal', '$message'
 
         if (snapshot.val() !== null) {
           var id = Object.keys(snapshot.val())[0];
-          
+
           if (snapshot.val()[id].password != $scope.l.password) {
-            
+
             $scope.HideLoading();
             $message.Show('Close Out Ph', 'Username / Password does not match.');
-            
+
           } else {
             //login
             $rootScope.userInfo = snapshot.val()[id];

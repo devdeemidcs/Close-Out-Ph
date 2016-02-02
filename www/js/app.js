@@ -12,7 +12,7 @@ app.run(function($ionicPlatform, $rootScope, $ionicHistory) {
 
   $rootScope.current_view = "home";
   $rootScope.loggedIn = false;
-  $rootScope.userInfo;
+  $rootScope.userInfo = {};
 
   if (localStorage.getItem('dev_c')) {
     //if user info exists...
@@ -33,6 +33,7 @@ app.run(function($ionicPlatform, $rootScope, $ionicHistory) {
     location.href = '#/app/profile';
     $ionicHistory.clearHistory();
 
+
   }
 
   $ionicPlatform.ready(function() {
@@ -47,5 +48,29 @@ app.run(function($ionicPlatform, $rootScope, $ionicHistory) {
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
+
+    if(window.plugins){
+      
+      var notificationOpenedCallback = function(jsonData) {
+        console.log('didReceiveRemoteNotificationCallBack: ' + JSON.stringify(jsonData));
+        console.log('data');
+      };
+
+      window.plugins.OneSignal.init("b16a0eb9-c5fb-4018-ae6d-c5872fe3476f", {
+          googleProjectNumber: "15593165519"
+        },
+        notificationOpenedCallback);
+
+      // Show an alert box if a notification comes in when the user is in your app.
+      window.plugins.OneSignal.enableInAppAlertNotification(true);
+
+      window.plugins.OneSignal.getIds(function(ids){
+        $rootScope.onesignal_player_id = ids.userId;
+        $rootScope.userInfo.onesignal_player_id = $rootScope.onesignal_player_id;
+        console.log($rootScope.userInfo);
+      });
+            
+    }
+
   });
 });

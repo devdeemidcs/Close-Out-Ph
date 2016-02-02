@@ -180,11 +180,11 @@ span.secondary-buttons, span.secondary-buttons a {
   padding-left: 0px !important;
 }
 
-.row .col:first-child{
+.row.sell-tabs .col:first-child{
   padding-left: 0px;
 }
 
-.row .col:last-child{
+.row.sell-tabs .col:last-child{
   padding-right: 0px;
 }
 
@@ -196,3 +196,4 @@ span.secondary-buttons, span.secondary-buttons a {
 .col button.button:disabled{
   background: #fafafa;
 }
+

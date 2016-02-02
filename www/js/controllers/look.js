@@ -2,6 +2,8 @@ app.controller('LookCtrl', ['$scope', '$rootScope', '$categories', '$ionicLoadin
 
   $scope.l = {};
   
+  $scope.half_screen = screen.height / 5;
+  
   $scope.categories = $categories.GetAll();
 
   $scope.GetSubs = function(){

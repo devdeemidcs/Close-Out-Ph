@@ -2,6 +2,8 @@ app.controller('SellCtrl', ['$scope', '$rootScope', '$categories', '$ionicLoadin
 
   $scope.s = {};
   
+  $scope.half_screen = screen.height / 5;
+  
   $scope.categories = $categories.GetAll();
 
   $scope.GetSubs = function(){

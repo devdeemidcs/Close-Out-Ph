@@ -29,7 +29,7 @@
         <label>Last Name</label>
       </div>
 
-      <button class="button button-block button-calm" ng-click="Login()">Log In</button>
+      <button class="button button-block button-calm" ng-click="Login()" ng-disabled="!l.username || !l.password">Log In</button>
       <center>
         <p>Or</p>
       </center>

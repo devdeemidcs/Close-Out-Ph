@@ -15,17 +15,33 @@
         <ion-slide>
 
           <ion-content>
-            <h3>Users</h3>
-            <ion-list>
-              
-              <ion-item ng-repeat="u in users">
-                
-                {{u}}
-                
-              </ion-item>  
-              
-            </ion-list>
             
+
+                    <div class="row" style="flex-wrap: wrap; -webkit-flex-wrap:row-wrap; padding-bottom:0px; margin-bottom:0;">
+                      <div class="col col-50" ng-repeat="i in items">
+                        <div class="list card" style="margin:0">
+                          <div class="item item-image" style="border-bottom: #e0e0e0 1px solid">
+                          <img ng-src="http://devdeemid.host22.com/uploads/{{i.urls[0]}}" height="{{image_height}}" style="border-bottom: #e0e0e0 1px solid">
+                          </div>
+                          <ion-item ng-href="#">
+                          
+                            <label class="title">{{i.name}}</label>
+                            <p class="subheader">Php {{i.price}}</p>
+                          
+                          </ion-item>
+                        </div>
+                      </div>
+                    </div>
+                    <ion-infinite-scroll ng-if="!noMoreItemsAvailable" on-infinite="loadMore()" distance="10%"></ion-infinite-scroll>
+<!--                    
+              <ion-item ng-repeat="i in items" class="item-thumbnail-left">
+                <img src="http://devdeemid.host22.com/uploads/{{i.urls[0]}}" alt="">
+                <h2>{{i.name}}</h2>
+                <p>{{i.price}}</p>
+              </ion-item>
+              <ion-infinite-scroll ng-if="!noMoreItemsAvailable" on-infinite="loadMore()" distance="10%"></ion-infinite-scroll>
+            </ion-list>-->
+
             <!--<div class="row" style="flex-wrap: wrap; -webkit-flex-wrap:row-wrap; padding-bottom:0px; margin-bottom:0;">
               <div class="col col-50" ng-repeat="item in items">
                 <div class="list card" style="margin:0">
